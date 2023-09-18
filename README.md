@@ -1,1 +1,1 @@
-<h1 align="center">holbertonschool-javascript-coding</h1>
+<h1 align="center">Hello-holbertonschool-javascript-coding</h1>
