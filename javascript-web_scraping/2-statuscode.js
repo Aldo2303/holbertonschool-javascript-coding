@@ -5,10 +5,3 @@ the episode number matches a given integer.
 */
 const filePath = process.argv[2];
 const request = require('request');
-
-request(filePath, (err, response, body) => {
-	if (err) {
-		console.log(err);
-	}
-	console.log('code:', response && response.statusCode);
-});
