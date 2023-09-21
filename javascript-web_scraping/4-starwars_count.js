@@ -10,15 +10,19 @@ You must use the module request
 */
 const request = require('request');
 const url = process.argv[2];
-const characterId = '18';
 
 request(url, (err, response, body) => {
   if (err) {
     console.error(err);
   }
   const data = JSON.parse(body);
-  const moviesWithWedgeAntilles = data.results.filter((film) =>
-    film.characters.includes(`https://swapi-api.hbtn.io/api/people/${characterId}/`)
-  );
-  console.log(moviesWithWedgeAntilles.length);
+  let count = 0;
+  for (const film of data.results) {
+    for (const character of film.characters) {
+      if (character.includes('18')) {
+        count++;
+      }
+    }
+  }
+  console.log(count);
 });
