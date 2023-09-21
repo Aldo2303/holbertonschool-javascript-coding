@@ -8,5 +8,6 @@ request(url, (err, response) => {
   if (err) {
     console.log(err);
   }
-  console.log('code:', response.statusCode);
+  const statCode = response.statusCode;
+  console.log(`code: ${statCode}`);
 });
