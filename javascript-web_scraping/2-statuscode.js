@@ -1,14 +1,12 @@
 #!/usr/bin/node
-/*
-Write a script that prints the title of a Star Wars movie where
-the episode number matches a given integer.
-*/
-const filePath = process.argv[2];
-const request = require('request');
+//display the status code of a GET request
 
-request(filePath, (err, response, body) => {
-	if (err) {
-		console.log(err);
-	}
-	console.log('code:', response && response.statusCode);
+const request = require('request');
+const url = process.argv[2];
+
+request(url, (err, response) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log('code:', response.statusCode);
 });
